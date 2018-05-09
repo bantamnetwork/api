@@ -9,7 +9,7 @@ endif()
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED on)
 
-option(BANTAM_STATIC_RUNTIME "Use static runtime" ON)
+option(BANTAM_STATIC_RUNTIME "Use static runtime" OFF)
 
 if(MSVC)
     if(BANTAM_STATIC_RUNTIME)
