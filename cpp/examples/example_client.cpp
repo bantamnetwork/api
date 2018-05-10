@@ -31,7 +31,7 @@ int main(int argc, char** argv) try
     }
 
     boost::asio::io_context ioc;
-    bantam::pclient client = std::make_shared<bantam::client>(ioc, "127.0.0.1", "/", "9999");
+    bantam::pclient client = std::make_shared<bantam::client>(ioc, host, "/", port);
 
     bantam::order_book book;
     auto data_callback = [&](const rapidjson::Value& doc)
