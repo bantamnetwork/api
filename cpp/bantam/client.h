@@ -16,6 +16,8 @@
 #include <thread>
 #include <vector>
 #include <future>
+#include <list>
+
 
 #define RAPIDJSON_HAS_STDSTRING 1
 #include <rapidjson/document.h>
