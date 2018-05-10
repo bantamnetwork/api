@@ -24,12 +24,14 @@ if(MSVC)
     add_definitions("-D_WIN32_WINNT=0x0501")
 endif()
 
-set(Boost_USE_STATIC_LIBS ${SLIB_STATIC_RUNTIME})
+set(Boost_USE_STATIC_LIBS ${BANTAM_STATIC_RUNTIME})
 set(Boost_USE_MULTITHREADED ON)
 set(Boost_x64 ON)
-set(Boost_USE_STATIC_RUNTIME     ${SLIB_STATIC_RUNTIME})
+set(Boost_USE_STATIC_RUNTIME     ${BANTAM_STATIC_RUNTIME})
 find_package(Boost REQUIRED thread date_time filesystem system)
 add_definitions(-DBOOST_COROUTINES_NO_DEPRECATION_WARNING -DBOOST_COROUTINE_NO_DEPRECATION_WARNING)
+
+find_package (Threads)
 
 include_directories(
     ${CMAKE_SOURCE_DIR}
