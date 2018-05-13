@@ -70,7 +70,7 @@ int main(int argc, char** argv) try
     auto ready_callback = [&](){
         client->get_resource("channels", [&](const rapidjson::Value& doc)
         {
-            std::cout << "Server has this channels:" << std::endl;
+            std::cout << "Server has " << doc.Size() << " channels:" << std::endl;
             for (rapidjson::SizeType i = 0; i < doc.Size(); ++i)
             {
                 std::cout << doc[i].GetString() << std::endl;;
@@ -78,6 +78,7 @@ int main(int argc, char** argv) try
             if (doc.Size() > 0)
             {
                 client->subscribe(doc[0].GetString(), data_callback);
+//                client->subscribe("binance/ETHBTC", data_callback);
             }
         });
     };
